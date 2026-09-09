@@ -68,7 +68,7 @@ const ActivityDetail = () => {
   }, 3000);
 
 
-  // Cleanup when component closes
+ 
   return () => {
 
     clearInterval(intervalId);
@@ -79,7 +79,7 @@ const ActivityDetail = () => {
   }, [id]);
 
 
-  /* ================= LOADING ================= */
+  /*  LOADING ... */
 
   if (!activity) {
 
@@ -133,7 +133,7 @@ const ActivityDetail = () => {
     >
 
 
-      {/* ================= BACK BUTTON ================= */}
+       {/* BACK BUTTON    */}
 
       <Button
         startIcon={<ArrowBackIcon />}
@@ -156,7 +156,7 @@ const ActivityDetail = () => {
       </Button>
 
 
-      {/* ================= PAGE HEADER ================= */}
+      {/*  PAGE HEADER........  */}
 
       <Box
         sx={{
@@ -203,7 +203,7 @@ const ActivityDetail = () => {
       </Box>
 
 
-      {/* ================= ACTIVITY SUMMARY ================= */}
+      {/* ACTIVITY SUMMARY...... */}
 
       
 <Grid
@@ -213,7 +213,11 @@ const ActivityDetail = () => {
     mb: 4,
   }}
 >
-  {/* ACTIVITY TYPE */}
+
+  
+  
+
+  
   <Grid size={{ xs: 12, sm: 6, md: 3 }}>
     <StatCard
       icon={<DirectionsRunIcon />}
@@ -222,7 +226,9 @@ const ActivityDetail = () => {
     />
   </Grid>
 
-  {/* DURATION */}
+
+
+  
   <Grid size={{ xs: 12, sm: 6, md: 3 }}>
     <StatCard
       icon={<TimerIcon />}
@@ -231,7 +237,8 @@ const ActivityDetail = () => {
     />
   </Grid>
 
-  {/* CALORIES */}
+
+  
   <Grid size={{ xs: 12, sm: 6, md: 3 }}>
     <StatCard
       icon={<LocalFireDepartmentIcon />}
@@ -240,7 +247,9 @@ const ActivityDetail = () => {
     />
   </Grid>
 
-  {/* DATE */}
+
+
+  
   <Grid size={{ xs: 12, sm: 6, md: 3 }}>
     <StatCard
       icon={<TrendingUpIcon />}
@@ -254,7 +263,7 @@ const ActivityDetail = () => {
   </Grid>
 </Grid>
       
-{/* ================= EXERCISES PERFORMED ================= */}
+{/* EXERCISES PERFORMED.........*/}
 
 {activity.type === "WEIGHT_TRAINING" &&
   activity.additionalMatrics?.exercises?.length > 0 && (
@@ -325,7 +334,7 @@ const ActivityDetail = () => {
                   </Typography>
 
 
-                  {/* EXERCISE STATS */}
+                 
 
                   <Box
                     sx={{
@@ -369,14 +378,14 @@ const ActivityDetail = () => {
     
 
 
-      {/* ================= AI SECTION ================= */}
+      {/* AI SECTION .......*/}
 
       {recommendation ? (
 
         <Box>
 
 
-          {/* AI HEADER */}
+         
 
           <Box
             sx={{
@@ -412,7 +421,7 @@ const ActivityDetail = () => {
           </Box>
 
 
-          {/* AI ANALYSIS */}
+        
 
           <Card
             sx={{
@@ -512,7 +521,7 @@ const ActivityDetail = () => {
 
 
 
-          {/* ================= AI CARDS ================= */}
+          {/*  AI CARDS ...... */}
 
           <Grid
             container
@@ -657,9 +666,7 @@ const ActivityDetail = () => {
 };
 
 
-/* =====================================================
-   STAT CARD
-===================================================== */
+/*  STAT CARD*/
 
 const StatCard = ({ icon, label, value }) => {
 
@@ -774,9 +781,7 @@ const StatCard = ({ icon, label, value }) => {
 };
 
 
-/* =====================================================
-   AI RECOMMENDATION CARD
-===================================================== */
+/* AI RECOMMENDATION CARD*/
 
 const RecommendationCard = ({ icon, title, items }) => {
 
