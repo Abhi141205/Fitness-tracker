@@ -1,8 +1,9 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/aiactivityfitness
+      uri: ${MONGO_URI}
       database: aiactivityfitness
+
   kafka:
     bootstrap-servers: localhost:9092
     producer:
@@ -12,11 +13,11 @@ spring:
 kafka:
   topic:
     name: activity-events
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
+      defaultZone: https://eureka-server-a0ye.onrender.com/eureka/
 
 server:
-  port: 8082
+  port: ${PORT:8082}

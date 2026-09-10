@@ -1,5 +1,5 @@
 spring:
   application:
-     name: activity-service
+    name: activity-service
   config:
-    import: optional:configserver:http://localhost:8888
+    import: optional:configserver:https://config-server-etwm.onrender.com
