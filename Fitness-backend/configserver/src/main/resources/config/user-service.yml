@@ -11,9 +11,9 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: https://eureka-server-a0ye.onrender.com/eureka/
 
 
 
 server:
-  port: 8081
+  port: ${PORT:8081}
