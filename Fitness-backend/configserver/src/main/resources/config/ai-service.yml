@@ -1,35 +1,40 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/airecommendationfitness
+      uri: ${MONGO_URI}
       database: airecommendationfitness
+
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+
     consumer:
       group-id: activity-processor-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
       properties:
         spring.json.use.type.headers: false
         spring.json.value.default.type: com.fitness.aiservices.model.Activity
         spring.json.trusted.package: "*"
 
+    properties:
+      security.protocol: SASL_SSL
+      sasl.mechanism: SCRAM-SHA-256
+      sasl.jaas.config: org.apache.kafka.common.security.scram.ScramLoginModule required username="${KAFKA_USERNAME}" password="${KAFKA_PASSWORD}";
+
+kafka:
+  topic:
+    name: activity-events
 
 gemini:
   api:
     url: ${GEMINI_URL}
     key: ${GEMINI_KEY}
 
-
-kafka:
-  topic:
-    name: activity-events
-
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
+      defaultZone: https://eureka-server-a0ye.onrender.com/eureka/
 
 server:
-  port: 8083
+  port: ${PORT:8083}
