@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-dah6padbedkc739cjgag-a:5432/fitness-micro-user
+    url: jdbc:postgresql://dpg-dah6padbedkc739cjgag-a:5432/fitness_micro_user
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
   jpa:
